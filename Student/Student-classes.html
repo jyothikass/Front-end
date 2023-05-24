@@ -11,7 +11,7 @@
       crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Student List </title>
+    <title>Classes List page</title>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/257d37fc1a.js" crossorigin="anonymous"></script>
@@ -24,7 +24,7 @@
 <body class="text-center">
     
     
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg " style="background-color:rgb(67, 65, 57);">
     <div class="container-fluid">
         <h2 style="font-size: 38px; color: #ff6219"><i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>  AXIS LMS PORTAL</h2>
     
@@ -35,16 +35,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../Admin/admin-dashboard.html"><h2>Back</h2></a>
+                    <a class="nav-link active" aria-current="page" href="../Student/student-dashboard.html"><h2>Back</h2></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container mt-3">
-    <div class="row bg-success text-white mt-2 ">
+<div class="container mt-3" style="background-color: rgb(230, 229, 209);">
+    <div style="background-color:rgb(119, 125, 36)">
         <div class="col">
-            <h2 class="p-2 "> <b>Students List</b></h2>
+            <h2 class="p-2 ">Classes List</h2>
         </div>
     </div>
     <div class="line"></div>
@@ -54,8 +54,8 @@
              <div class="row mt-3">
             <div class="col-3">
                 <div class="form-floating">
-                    <input type="number" class="form-control" id="id" placeholder="enter student id" name="id">
-                    <label for="id"></label>
+                    <input type="text" class="form-control" id="id" placeholder="enter name" name="id">
+                    <label for="id">enter name</label>
                 </div>
 
             </div>
@@ -68,9 +68,11 @@
           <table class="table table-bordered" style="color: rgb(0, 0, 0);" id="studenttable" >
             <thead>
               <tr>
-                <th>student-id</th>
-                <th>student-name</th>
-                <th>student-email </th>
+                <th>Id</th>
+                <th>Cource Name</th>
+                <th>Date</th>
+                <th >Link</th>
+                <th>Time</th>
                 
               </tr>
             </thead>
@@ -78,6 +80,6 @@
     
         </div>
       </div>
-      <script src="../Admin/list-student-api.js"></script>
+      <script src="../Student/Student-classes.js"></script>
 </body>
 </html>

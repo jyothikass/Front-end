@@ -21,13 +21,14 @@ function propulateActualData(table, userBookings) {
     }
     for(const userBooking of userBookings) {
         console.log(userBooking)
-        const {id, name, email } = userBooking 
+        const {id, name, email, role } = userBooking 
        
 
         const row = table.insertRow()
         row.insertCell(0).innerHTML = id
         row.insertCell(1).innerHTML = name
         row.insertCell(2).innerHTML = email
+        row.insertCell(3).innerHTML = role
          
         
     }
@@ -36,7 +37,7 @@ function propulateActualData(table, userBookings) {
 
 
 function apiFetchAllbookings(table) {
-    axios.get('http://localhost:8280/student/fetch')
+    axios.get('http://localhost:8280/users/fetch')
         .then(res => {
            
             const { data } = res

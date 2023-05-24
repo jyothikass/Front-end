@@ -30,7 +30,7 @@ function populateActualData(table, courses) {
       updateButton.setAttribute('data-id', id)
       updateButton.addEventListener('click', (event) => {
         const courseId = event.target.getAttribute('data-id')
-        window.location.href = `./individual-course.html?id=${id}`
+        window.location.href = `w3schools.com/java/`
       })
       card.appendChild(header)
       card.appendChild(faculty)
@@ -85,7 +85,7 @@ function populateActualData(table, courses) {
             console.log(data)
             const { sts, msg, bd } = data
 
-            // if (bd.length === 0) alert("No course found")
+            if (bd.length === 0) alert("No course found")
 
             populateActualData(table, bd)
 

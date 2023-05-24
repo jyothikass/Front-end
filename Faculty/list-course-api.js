@@ -55,7 +55,7 @@ function populateActualData(table, courses) {
 
 
         // './update-course.html?id=${id}'
-        const viewPageUrl = `./view-course.html?id=${id}`
+        const viewPageUrl = `./list-course-students.html?id=${id}`
 
         const row = table.insertRow()
 

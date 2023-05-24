@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new Event</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./faculty-dashboard.html">faculty Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./faculty-dashboard.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="card-container mb-4">
+        <div class="card-header">
+            <h2>Create New class</h2>
+        </div>
+        <div class="card-body">
+            <form class="form-minimize" id="new-event-link">
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-danger" role="alert" id="errMsg">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="courseName"><b>Course Name: </b></label>
+                    <input type="text" class="form-control input-minimize" id="courseName" placeholder="Enter Job name"
+                        name="jobTitle">
+                </div>
+                <div class="form-group mb-2">
+                    <label for="date"><b>Date: </b></label>
+                    <input type="date" class="form-control input-minimize" id="date" name="date"
+                        min="yyyy-mm-dd">
+                </div>
+                <div class="form-group mb-2">
+                    <label for="time"><b>Time: </b></label>
+                    <input type="time" class="form-control input-minimize" id="time" name="time">
+                </div>
+                <div class="form-group mb-2">
+                    <label for="link"><b>Link: </b></label>
+                    <input type="url" class="form-control input-minimize" id="link" name="link">
+                </div>
+                
+                
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary padding-10px">Create class</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    New class Created Successfully
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success"><a href="../Student/Student-classes.html"
+                            class="text-white">CLOSE</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Faculty/create-class.js"></script>
+</body>
+
+</html>

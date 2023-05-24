@@ -11,7 +11,7 @@
       crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Student List </title>
+    <title>Users List</title>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/257d37fc1a.js" crossorigin="anonymous"></script>
@@ -41,10 +41,10 @@
         </div>
     </div>
 </nav>
-<div class="container mt-3">
+<div class="container mt-3" style="background-color: rgb(191, 210, 128);">
     <div class="row bg-success text-white mt-2 ">
         <div class="col">
-            <h2 class="p-2 "> <b>Students List</b></h2>
+            <h2 class="p-2 "> <b>Users List</b></h2>
         </div>
     </div>
     <div class="line"></div>
@@ -54,8 +54,8 @@
              <div class="row mt-3">
             <div class="col-3">
                 <div class="form-floating">
-                    <input type="number" class="form-control" id="id" placeholder="enter student id" name="id">
-                    <label for="id"></label>
+                    <input type="text" class="form-control" id="id" placeholder="enter name" name="id">
+                    <label for="id">enter name</label>
                 </div>
 
             </div>
@@ -68,9 +68,10 @@
           <table class="table table-bordered" style="color: rgb(0, 0, 0);" id="studenttable" >
             <thead>
               <tr>
-                <th>student-id</th>
-                <th>student-name</th>
-                <th>student-email </th>
+                <th>User-id</th>
+                <th>User-name</th>
+                <th>User-email </th>
+                <th>User-role</th>
                 
               </tr>
             </thead>
@@ -78,6 +79,6 @@
     
         </div>
       </div>
-      <script src="../Admin/list-student-api.js"></script>
+      <script src="../Admin/user.js"></script>
 </body>
 </html>

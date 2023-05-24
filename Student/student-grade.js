@@ -21,13 +21,16 @@ function propulateActualData(table, userBookings) {
     }
     for(const userBooking of userBookings) {
         console.log(userBooking)
-        const {id, name, email } = userBooking 
+        const {id, name, assignmentName, feedback, grade } = userBooking 
        
 
         const row = table.insertRow()
         row.insertCell(0).innerHTML = id
         row.insertCell(1).innerHTML = name
-        row.insertCell(2).innerHTML = email
+        row.insertCell(2).innerHTML = assignmentName
+        row.insertCell(3).innerHTML = feedback
+        row.insertCell(3).innerHTML = grade
+        
          
         
     }
@@ -36,7 +39,7 @@ function propulateActualData(table, userBookings) {
 
 
 function apiFetchAllbookings(table) {
-    axios.get('http://localhost:8280/student/fetch')
+    axios.get('http://localhost:8280/grades/fetch')
         .then(res => {
            
             const { data } = res
@@ -51,7 +54,7 @@ function apiFetchAllbookings(table) {
 function apiFetchBooking(table, id) {
     console.log(table)
     console.log(id)
-    const url = `http://localhost:8280/student/${id}`
+    const url = `http://localhost:8280/grades/${id}`
     axios.get(url,{
         params: {
             id: id

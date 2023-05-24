@@ -23,11 +23,6 @@ function setUpTable() {
 }
 
 
-
-
-
-
-
 setUpTable()
 
 function populateActualData(table, courses) {
@@ -51,11 +46,7 @@ function populateActualData(table, courses) {
     for (const course of courses) {
 
         const { id, courseName, facultyName, startDate, endDate, material, recording } = course
-        const updatePageUrl = `./update-course.html?id=${id}`
-
-
-        // './update-course.html?id=${id}'
-        const viewPageUrl = `./view-course.html?id=${id}`
+        const enrollPageUrl = `./Enrollment.html?id=${id}`
 
         const row = table.insertRow()
 
@@ -67,7 +58,7 @@ function populateActualData(table, courses) {
         row.insertCell(5).innerHTML = material
         row.insertCell(6).innerHTML = recording
         row.insertCell(7).innerHTML=`
-        <a class = "btn btn-primary" href='${updatePageUrl}'>Enroll</a> `
+        <a class = "btn btn-primary" href='${enrollPageUrl}'>Enroll</a> `
         // row.insertCell(7).innerHTML = `
         //     <a class = "btn btn-primary" href='${viewPageUrl}'>View</a>
         //     <a class = "btn btn-primary" href='${updatePageUrl}'>Enroll</a>
@@ -76,19 +67,6 @@ function populateActualData(table, courses) {
 
     }
 }
-
-function apiFetchAllCourse(table) {
-    axios.get('http://localhost:8280/course/fetch')
-        .then(res => {
-            const { data } = res
-            console.log(data)
-            const { sts, msg, bd } = data
-
-            propulateActualData(table, bd)
-        })
-        .catch(err => console.log(err))
-}
-
 
 
 function deleteCourse(id) {
@@ -127,34 +105,6 @@ function apiFetchAllCourseByName(table, courseValue) {
         })
         .catch(err => console.log(err))
 }
-
-
-
-// function showConfirmDeleteModal(id) {
-//     console.log('clicked ' + id)
-//     const myModalEl = document.getElementById('deleteModal');
-//     const modal = new bootstrap.Modal(myModalEl)
-//     modal.show()
-
-
-//     const btDl = document.getElementById('btDl')
-//     btDl.onclick = () => {
-//         apiCallDeleteCourse(id, modal)
-//     }
-// }
-
-// function showConfirmDeleteModal(id) {
-
-//     document.getElementById('confirm-delete-btn').addEventListener('click', function(){
-//         axios.delete('http://localhost:8080/course/${id}')
-//         .then(res => res.data) 
-//         .then( () =>  window.alert("Student deleted successfully"))
-//         .catch(console.log)
-//     })
-
-
-// }
-
 
 
 

@@ -30,10 +30,13 @@
     </nav>
     <br>
     <br>
-    <div class="container">
+    <br>
+    <main style="background-color: rgb(197, 127, 127);">
+    <div class="container" >
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
                 <h1 class="text-center">Add New Course</h1>
+                
                 <div class="card-body">
                     <form id="formCourse">
                         <div class ="alert alert-danger" role="alert" id="errDiv"></div>
@@ -74,8 +77,11 @@
                         </div>
 
                         <div class="box-footer">
+                            <button type="reset" class="btn btn-primary">
+                                Cancel
+                            </button>
                             <button type="submit" class="btn btn-primary">
-                                Add
+                                Add Course
                             </button>
                         </div>
                     </form>
@@ -84,6 +90,8 @@
             </div>
         </div>
     </div>
+</main>>
+
     <!-- Modal -->
     <div class="modal fade" id="successModal" role="dialog">
         <div class="modal-dialog">
