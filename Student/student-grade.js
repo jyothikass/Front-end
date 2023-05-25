@@ -1,13 +1,7 @@
 function setupTable() {
     const table = document.getElementById('studenttable')
 
-    const btnSearch = document.getElementById('btnSearch')
-    
-     btnSearch.onclick = () =>   {
 
-         const api=apiFetchBooking(table, document.getElementById('id').value )
-         console.log(api)
-    }
     
     apiFetchAllbookings(table)
 }

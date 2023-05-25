@@ -8,7 +8,7 @@ forgotPasswordForm.addEventListener("submit", function (event) {
     console.log(user)
   
     
-    axios.post('http://localhost:8080/user/login/forgotpass', user)
+    axios.post('http://localhost:8280/users/forgotpass', user)
         .then((response) => {
             // console.log(response.data);
 

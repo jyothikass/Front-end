@@ -35,14 +35,14 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../Admin/admin-dashboard.html"><h2>Back</h2></a>
+                    <a class="nav-link active" aria-current="page" href="../Faculty/faculty-dashboard.html"><h2>Back</h2></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container mt-3">
-    <div class="row bg-success text-white mt-2 ">
+<div class="container mt-3" style="background-color: rgb(195, 205, 222);">
+    <div style="background-color: rgb(81, 107, 154);">
         <div class="col">
             <h2 class="p-2 "> <b>Students List</b></h2>
         </div>
@@ -50,20 +50,19 @@
     <div class="line"></div>
     <div class="container mt-3" >
         
-        <div class="row mt-3">
-             <div class="row mt-3">
+    
+        <div class="row" >
             <div class="col-3">
-                <div class="form-floating">
-                    <input type="number" class="form-control" id="id" placeholder="enter student id" name="id">
-                    <label for="id"></label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="courseSearch" placeholder="Search student here"
+                        name="course">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" id="btnSearch" type="button">Search</button>
+                    </span>
                 </div>
-
-            </div>
-            <div class="col-2">
-                <input type="button" value="Serach" class="btn btn-primary" id="btnSearch">
             </div>
         </div>
-        </div>
+        <br>
         <div class="row mt-3">
           <table class="table table-bordered" style="color: rgb(0, 0, 0);" id="studenttable" >
             <thead>

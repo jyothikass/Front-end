@@ -54,9 +54,6 @@ function populateActualData(table, courses) {
         const updatePageUrl = `./update-course.html?id=${id}`
 
 
-        // './update-course.html?id=${id}'
-        const viewPageUrl = `./view-course.html?id=${id}`
-
         const row = table.insertRow()
 
         row.insertCell(0).innerHTML = id
@@ -66,10 +63,10 @@ function populateActualData(table, courses) {
         row.insertCell(4).innerHTML = endDate
         row.insertCell(5).innerHTML = material
         row.insertCell(6).innerHTML = recording
-        // row.insertCell(7).innerHTML = `
-        //     <a class = "btn btn-primary" href='${viewPageUrl}'>View</a>
-        //     <a class = "btn btn-primary" href='${updatePageUrl}'>Update</a>
-        //     <a class="btn btn-danger" onclick='deleteCourse(${id})'>Delete</a>`
+        row.insertCell(7).innerHTML = `
+            
+            <a class = "btn btn-primary" href='${updatePageUrl}'>Update</a>
+            <a class="btn btn-danger" onclick='deleteCourse(${id})'>Delete</a>`
 
     }
 }

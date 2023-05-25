@@ -15,20 +15,24 @@ function setupTable() {
  setupTable()
 
 
-function propulateActualData(table, userBookings) {
+function propulateActualData(table, classes) {
     while (table.rows.length > 1) {
         table.deleteRow(1)
     }
-    for(const userBooking of userBookings) {
-        console.log(userBooking)
-        const {id, name, email, role } = userBooking 
-       
+    for(const classe of classes) {
+        console.log(classe)
+        const {id, courseName, courseId, name} = classe
+        const viewPageUrl = `../Student/student-courses.html?id=${id}`
 
         const row = table.insertRow()
         row.insertCell(0).innerHTML = id
-        row.insertCell(1).innerHTML = name
-        row.insertCell(2).innerHTML = email
-        row.insertCell(3).innerHTML = role
+        row.insertCell(1).innerHTML = courseName
+        row.insertCell(2).innerHTML = courseId
+        row.insertCell(3).innerHTML = name
+        row.insertCell(4).innerHTML = `
+            <a class = "btn btn-primary" href='${viewPageUrl}'>View</a>
+            <a class="btn btn-danger" onclick='deleteCourse(${id})'>Cancel</a>`
+        
          
         
     }
@@ -37,7 +41,7 @@ function propulateActualData(table, userBookings) {
 
 
 function apiFetchAllbookings(table) {
-    axios.get('http://localhost:8280/users/fetch')
+    axios.get('http://localhost:8280/enroll/fetch')
         .then(res => {
            
             const { data } = res
@@ -52,7 +56,7 @@ function apiFetchAllbookings(table) {
 function apiFetchBooking(table, id) {
     console.log(table)
     console.log(id)
-    const url = `http://localhost:8280/student/${id}`
+    const url = `http://localhost:8280/enroll/${id}`
     axios.get(url,{
         params: {
             id: id
@@ -68,8 +72,23 @@ function apiFetchBooking(table, id) {
         .catch(err => console.log(err))
 }
 
+function deleteCourse(id) {
+    console.log(id)
+    //id = Number(id);
+    axios.delete(`http://localhost:8280/enroll/${id}`)
+        .then(function (response) {
+            console.log('Course deleted')
+            window.alert("Course deleted successfully")
+
+        })
+        .catch(function (error) {
+            // Handle error response
+            console.log(error)
+        })
+}
 
 console.log("View page")
 function goBack() {
     window.history.back();
 }
+

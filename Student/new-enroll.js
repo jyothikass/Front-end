@@ -1,9 +1,9 @@
-const validateForm = ({courseName, date, time, link}) => {
+const validateForm = ({ name, courseId, courseName }) => {
 
+    if (courseId.length <= 0) return { msg: 'invalid date', sts: false }
+    if (name.length <= 0) return { msg: 'invalid time', sts: false }
     if (courseName.length <= 0) return { msg: 'invalid courseName', sts: false }
-    if (date.length <= 0) return { msg: 'invalid date', sts: false }
-    if (time.length <= 0) return { msg: 'invalid time', sts: false }
-    if (link.length <= 0) return { msg: 'invalid link', sts: false }
+    
     
     return { sts: 'success', msg: 'all fields are valid' }
 }
@@ -39,7 +39,7 @@ function apiSignup(user, form) {
     const headers = {
         'content-type': 'application/json'
     }
-    axios.post('http://localhost:8280/classes/', user, { headers })
+    axios.post('http://localhost:8280/enroll/add', user, { headers })
 
         .then(res => {
             form.reset()
@@ -55,5 +55,5 @@ function showSuccessModal() {
 
 function logOut() {
     localStorage.setItem("userId", null)
-    window.location.href = "../Student/Student-classes.html"
+    window.location.href = "../Student/student-dashboard.html"
 }

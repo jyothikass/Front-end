@@ -23,11 +23,6 @@ function setUpTable() {
 }
 
 
-
-
-
-
-
 setUpTable()
 
 function populateActualData(table, courses) {
@@ -51,11 +46,7 @@ function populateActualData(table, courses) {
     for (const course of courses) {
 
         const { id, courseName, facultyName, startDate, endDate, material, recording } = course
-        const updatePageUrl = `./update-course.html?id=${id}`
-
-
-        // './update-course.html?id=${id}'
-        const viewPageUrl = `./list-course-students.html?id=${id}`
+       
 
         const row = table.insertRow()
 
@@ -66,26 +57,10 @@ function populateActualData(table, courses) {
         row.insertCell(4).innerHTML = endDate
         row.insertCell(5).innerHTML = material
         row.insertCell(6).innerHTML = recording
-        row.insertCell(7).innerHTML = `
-            <a class = "btn btn-primary" href='${viewPageUrl}'>View</a>
-            <a class = "btn btn-primary" href='${updatePageUrl}'>Update</a>
-            <a class="btn btn-danger" onclick='deleteCourse(${id})'>Delete</a>`
+        
 
     }
 }
-
-function apiFetchAllCourse(table) {
-    axios.get('http://localhost:8280/course/fetch')
-        .then(res => {
-            const { data } = res
-            console.log(data)
-            const { sts, msg, bd } = data
-
-            propulateActualData(table, bd)
-        })
-        .catch(err => console.log(err))
-}
-
 
 
 function deleteCourse(id) {
@@ -124,6 +99,7 @@ function apiFetchAllCourseByName(table, courseValue) {
         })
         .catch(err => console.log(err))
 }
+
 
 
 function apiFetchAllCourses(table) {
