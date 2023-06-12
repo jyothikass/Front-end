@@ -138,7 +138,7 @@ function apiFetchAllCourses(table) {
 }
 
 // function apiCallDeleteCourse(id, modal){
-//     const url= 'http://localhost:8080/course/${id}'
+//     const url= 'http://localhost:8280/course/${id}'
 //     axios.delete(url)
 //         .then(res => res.data)
 //         .then( ({ sts, msg, bd }) =>  modal.hide() )

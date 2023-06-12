@@ -22,7 +22,7 @@ function propulateActualData(table, classes) {
     for(const classe of classes) {
         console.log(classe)
         const {id, courseName, courseId, name} = classe
-        const viewPageUrl = `../Student/student-courses.html?id=${id}`
+        const viewPageUrl = `../Student/list-course-student.html?id=${id}`
 
         const row = table.insertRow()
         row.insertCell(0).innerHTML = id
@@ -38,8 +38,6 @@ function propulateActualData(table, classes) {
     }
 }
 
-
-
 function apiFetchAllbookings(table) {
     axios.get('http://localhost:8280/enroll/fetch')
         .then(res => {
@@ -53,29 +51,11 @@ function apiFetchAllbookings(table) {
         .catch(err => console.log(err))
 }
 
-function apiFetchBooking(table, id) {
-    console.log(table)
-    console.log(id)
-    const url = `http://localhost:8280/enroll/${id}`
-    axios.get(url,{
-        params: {
-            id: id
-        }
-    })
-        .then(res => {
-            const { data } = res
-            console.log(data)  
-            const { sts, msg, bd } = data
-
-            propulateActualData(table, bd)
-        })
-        .catch(err => console.log(err))
-}
 
 function deleteCourse(id) {
     console.log(id)
     //id = Number(id);
-    axios.delete(`http://localhost:8280/enroll/${id}`)
+    axios.delete(`http://localhost:8280/course/${id}`)
         .then(function (response) {
             console.log('Course deleted')
             window.alert("Course deleted successfully")

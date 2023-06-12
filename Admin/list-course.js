@@ -51,7 +51,7 @@ function populateActualData(table, courses) {
     for (const course of courses) {
 
         const { id, courseName, facultyName, startDate, endDate, material, recording } = course
-        const updatePageUrl = `./update-course.html?id=${id}`
+        const updatePageUrl = `../Admin/admin-update-course.html?id=${id}`
 
 
         const row = table.insertRow()

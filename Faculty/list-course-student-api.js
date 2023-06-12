@@ -30,7 +30,7 @@ function populateActualData(table, courses) {
       updateButton.setAttribute('data-id', id)
       updateButton.addEventListener('click', (event) => {
         const courseId = event.target.getAttribute('data-id')
-        window.location.href = `w3schools.com/java/`
+        window.location.href = `https://www.w3schools.com/java/`
       })
       card.appendChild(header)
       card.appendChild(faculty)

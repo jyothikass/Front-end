@@ -12,6 +12,34 @@ function setupTable() {
     apiFetchAllbookings(table)
 }
 
+
+
+function setUpTable() {
+    const table = document.getElementById('studenttable')
+    const courseSearch = document.getElementById('courseSearch')
+
+
+    btnSearch.onclick = () => {
+
+        const searchTerm = courseSearch.value.trim()
+
+        if (searchTerm === '') {
+            alert('Please enter the course')
+            return
+        }
+
+        apiFetchAllCourseByName(table, document.getElementById('courseSearch').value)
+
+    }
+
+    apiFetchAllCourses(table)
+
+}
+
+
+
+
+
  setupTable()
 
 
@@ -66,6 +94,27 @@ function apiFetchBooking(table, id) {
             const { sts, msg, bd } = data
 
             propulateActualData(table, bd)
+        })
+        .catch(err => console.log(err))
+}
+
+function apiFetchAllCourseByName(table, courseValue) {
+    const url = 'http://localhost:8280/classes/name'
+    axios.get(url, {
+        params: {
+            courseName: courseValue
+        }
+    })
+        .then(res => {
+            const { data } = res
+            console.log(data)
+            const { sts, msg, bd } = data
+
+            if (bd.length === 0) alert("No course found")
+
+            populateActualData(table, bd)
+
+
         })
         .catch(err => console.log(err))
 }

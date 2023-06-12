@@ -81,7 +81,7 @@ function ValidePassword() {
         document.getElementById('passwordError').innerHTML = '';
     } else {
         console.log('invalide password');
-        document.getElementById('passwordError').innerHTML = 'Plese enter valide password';
+        document.getElementById('passwordError').innerHTML = 'Plese enter valide password ';
     }
 }
 
